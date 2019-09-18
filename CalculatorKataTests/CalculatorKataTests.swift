@@ -13,12 +13,20 @@ class StringCalculatorTests: XCTestCase {
     
     let sut = StringCalculator()
 
-    func test_whenNumberStringIsEmpty_returnZero() {
+    func test_whenNumbersStringIsEmpty_returnZero() {
         let numbers = ""
         
         let result = self.sut.add(numbers)
         
         XCTAssertEqual(result, 0, "Result should be zero when 'numbers' is empty")
+    }
+    
+    func test_whenTwoNumbers_returnSum() {
+        let numbers = "1,2"
+        
+        let result = self.sut.add(numbers)
+        
+        XCTAssertEqual(result, 3)
     }
 
 }
