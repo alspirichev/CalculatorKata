@@ -13,6 +13,7 @@
 		CD258B0B233178DB0010CAD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD258B0A233178DB0010CAD5 /* Assets.xcassets */; };
 		CD258B0E233178DB0010CAD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD258B0C233178DB0010CAD5 /* LaunchScreen.storyboard */; };
 		CD258B19233178DB0010CAD5 /* CalculatorKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD258B18233178DB0010CAD5 /* CalculatorKataTests.swift */; };
+		CDF8AD87233298920015E45D /* StringCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8AD86233298920015E45D /* StringCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		CD258B14233178DB0010CAD5 /* CalculatorKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD258B18233178DB0010CAD5 /* CalculatorKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorKataTests.swift; sourceTree = "<group>"; };
 		CD258B1A233178DB0010CAD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF8AD86233298920015E45D /* StringCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				CD258B03233178D80010CAD5 /* AppDelegate.swift */,
 				CD258B05233178D80010CAD5 /* ViewController.swift */,
+				CDF8AD86233298920015E45D /* StringCalculator.swift */,
 				CD258B07233178D80010CAD5 /* Main.storyboard */,
 				CD258B0A233178DB0010CAD5 /* Assets.xcassets */,
 				CD258B0C233178DB0010CAD5 /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF8AD87233298920015E45D /* StringCalculator.swift in Sources */,
 				CD258B06233178D80010CAD5 /* ViewController.swift in Sources */,
 				CD258B04233178D80010CAD5 /* AppDelegate.swift in Sources */,
 			);
