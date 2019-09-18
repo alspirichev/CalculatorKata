@@ -21,11 +21,19 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertEqual(result, 0, "Result should be zero when 'numbers' is empty")
     }
     
-    func test_whenTwoNumbers_returnSum() {
-        let numbers = "1,2"
+    func test_whenNumberStringIsOne_thenReturnOne() {
+        let numbers = "1"
         
         let result = self.sut.add(numbers)
         
+        XCTAssertEqual(result, 1)
+    }
+    
+    func test_whenNumberStringMoreThenOne_thenReturnInputDigit() {
+        let numbers = "3"
+        
+        let result = self.sut.add(numbers)
+
         XCTAssertEqual(result, 3)
     }
 

@@ -12,6 +12,7 @@ public class StringCalculator {
     func add(_ numbers: String) -> Int {
         guard !numbers.isEmpty else { return 0 }
         
-        return 3
+        guard let digit = Int(numbers) else { return 0}
+        return digit
     }
 }
