@@ -127,4 +127,12 @@ class StringCalculatorTests: XCTestCase {
         }
     }
     
+    func test_ignoreNumbersBiggerThan1000_returnSumOFNumbers() throws {
+        let numbers = "1,2,1234,123"
+        
+        let result = try self.sut.add(numbers)
+        
+        XCTAssertEqual(126, result)
+    }
+    
 }

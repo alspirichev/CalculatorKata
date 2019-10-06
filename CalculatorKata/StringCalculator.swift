@@ -39,7 +39,9 @@ public class StringCalculator {
                     negativeNumbers.append($0)
                 }
                 return $0
-        }
+            }
+            .filter { $0 <= 1000 }
+        
         
         if !negativeNumbers.isEmpty {
             throw InputError.negativeNumbers(negativeNumbers)
@@ -50,7 +52,6 @@ public class StringCalculator {
 }
 
 // MARK: - InputError Equatable
-
 extension InputError: Equatable {
     static public func ==(lhs: InputError, rhs: InputError) -> Bool {
         switch (lhs, rhs) {
@@ -64,3 +65,17 @@ extension InputError: Equatable {
         }
     }
 }
+
+// MARK: - Skip for Sequence
+//extension Sequence {
+//    public func skipWhere<T>(_ transform: (Bool) throws -> T) rethrows -> [T] {
+//        var result = [T]()
+//
+//        for item in self {
+//            result.append(try transform(item))
+//        }
+//
+//        return result
+//    }
+//}
+
