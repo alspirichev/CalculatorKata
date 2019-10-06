@@ -44,5 +44,13 @@ class StringCalculatorTests: XCTestCase {
         
         XCTAssertEqual(3, result)
     }
+    
+    func test_whenPassAnotherTwoNumber_thenReturnTheirSum() {
+        let numbers = "3, 4"
+        
+        let result = self.sut.add(numbers)
+        
+        XCTAssertEqual(7, result)
+    }
 
 }
