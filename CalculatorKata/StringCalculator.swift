@@ -10,6 +10,7 @@ import Foundation
 
 enum InputError: Error {
     case invalidFormat
+    case negativeNumbers(_ numbers: [Int])
 }
 
 public class StringCalculator {
@@ -21,6 +22,7 @@ public class StringCalculator {
         
         let prefix = "//"
         var delimeter = ","
+        var negativeNumbers: [Int] = []
         
         if numbers.hasPrefix(prefix) {
             delimeter = String(numbers
@@ -28,11 +30,37 @@ public class StringCalculator {
                 .first!)
         }
         
-        let digits = numbers.components(separatedBy: "\n")
+        let digits: [Int] = numbers.components(separatedBy: "\n")
             .flatMap { $0.components(separatedBy: delimeter) }
             .map { Int($0) }
             .compactMap { $0 }
+            .map {
+                if $0 < 0 {
+                    negativeNumbers.append($0)
+                }
+                return $0
+        }
+        
+        if !negativeNumbers.isEmpty {
+            throw InputError.negativeNumbers(negativeNumbers)
+        }
         
         return digits.reduce(0, +)
+    }
+}
+
+// MARK: - InputError Equatable
+
+extension InputError: Equatable {
+    static public func ==(lhs: InputError, rhs: InputError) -> Bool {
+        switch (lhs, rhs) {
+            case let (.negativeNumbers(a), .negativeNumbers(b)):
+                return a == b
+            
+            case (.invalidFormat, .invalidFormat):
+                return true
+            default:
+                return false
+        }
     }
 }

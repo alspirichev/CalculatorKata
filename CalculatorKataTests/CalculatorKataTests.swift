@@ -110,4 +110,21 @@ class StringCalculatorTests: XCTestCase {
         XCTAssertEqual(3, result)
     }
     
+    func test_whenSumPosNumberWithNegNumber_thenThrowException() {
+        let numbers = "1,-2"
+        
+        XCTAssertThrowsError(try self.sut.add(numbers)) { error in
+            let throwError = error as! InputError
+            XCTAssertEqual(throwError, InputError.negativeNumbers([-2]))
+            
+            switch throwError {
+                case .negativeNumbers(let numbers):
+                    XCTAssertEqual([-2], numbers, "Negatives not allowed")
+                
+                default:
+                    XCTFail("Error case must be with negative numbers")
+            }
+        }
+    }
+    
 }
