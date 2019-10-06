@@ -52,5 +52,21 @@ class StringCalculatorTests: XCTestCase {
         
         XCTAssertEqual(7, result)
     }
+    
+    func test_whenPassFourNumbers_thenReturnTheirSum() {
+        let numbers = "1, 2, 3, 4"
+        
+        let result = self.sut.add(numbers)
+        
+        XCTAssertEqual(10, result)
+    }
+    
+    func test_whenPassTenNumbers_thenReturnTheirSum() {
+        let numbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        
+        let result = self.sut.add(numbers)
+        
+        XCTAssertEqual(55, result)
+    }
 
 }
