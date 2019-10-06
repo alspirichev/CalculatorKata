@@ -19,8 +19,17 @@ public class StringCalculator {
             throw InputError.invalidFormat
         }
         
+        let prefix = "//"
+        var delimeter = ","
+        
+        if numbers.hasPrefix(prefix) {
+            delimeter = String(numbers
+                .dropFirst(prefix.count)
+                .first!)
+        }
+        
         let digits = numbers.components(separatedBy: "\n")
-            .flatMap { $0.components(separatedBy: ",") }
+            .flatMap { $0.components(separatedBy: delimeter) }
             .map { $0.trimmingCharacters(in: .whitespaces) }
             .map { Int($0) }
             .compactMap { $0 }

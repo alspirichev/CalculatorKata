@@ -102,4 +102,12 @@ class StringCalculatorTests: XCTestCase {
         }
     }
     
+    func test_whenPassNumbersWithTwoSlah_thenChangeDelimeterAndReturnSum() throws {
+        let numbers = "//;\n1;2"
+        
+        let result = try self.sut.add(numbers)
+        
+        XCTAssertEqual(3, result)
+    }
+    
 }
