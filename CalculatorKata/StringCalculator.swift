@@ -12,7 +12,9 @@ public class StringCalculator {
     func add(_ numbers: String) -> Int {
         guard !numbers.isEmpty else { return 0 }
         
-        let digits = numbers.components(separatedBy: ",")
+        let digits = numbers.components(separatedBy: "\n")
+            .flatMap { $0.components(separatedBy: ",") }
+            .map { $0.trimmingCharacters(in: .whitespaces) }
             .map { Int($0) }
             .compactMap { $0 }
         
