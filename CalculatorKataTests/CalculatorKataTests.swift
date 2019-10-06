@@ -38,7 +38,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func test_whenPassTwoNumbers_thenReturnTheirSum() {
-        let numbers = "1, 2"
+        let numbers = "1,2"
         
         let result = self.sut.add(numbers)
         
@@ -46,7 +46,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func test_whenPassAnotherTwoNumber_thenReturnTheirSum() {
-        let numbers = "3, 4"
+        let numbers = "3,4"
         
         let result = self.sut.add(numbers)
         
@@ -54,7 +54,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func test_whenPassFourNumbers_thenReturnTheirSum() {
-        let numbers = "1, 2, 3, 4"
+        let numbers = "1,2,3,4"
         
         let result = self.sut.add(numbers)
         
@@ -62,7 +62,7 @@ class StringCalculatorTests: XCTestCase {
     }
     
     func test_whenPassTenNumbers_thenReturnTheirSum() {
-        let numbers = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        let numbers = "1,2,3,4,5,6,7,8,9,10"
         
         let result = self.sut.add(numbers)
         
