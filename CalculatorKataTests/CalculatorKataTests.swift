@@ -84,5 +84,13 @@ class StringCalculatorTests: XCTestCase {
         
         XCTAssertEqual(6, result)
     }
+    
+    func test_whenPassNumberWithThreeNewLineAndTwoComma_thenReturnTheirSum() {
+        let numbers = "5\n,6\n,7\n8"
+        
+        let result = self.sut.add(numbers)
+        
+        XCTAssertEqual(26, result)
+    }
 
 }
